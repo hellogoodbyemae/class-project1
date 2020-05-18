@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>NYTSearch</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700,700i&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <script type= "text/javascript">
+          var searchTerm="election"
+           
+            var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + searchTerm + "&api-key=YaeHEki4bu0Ebs1oCTGp7Xt0fZl7gS4b";
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            }).then(function (response) {
+                var results = response.response;
+
+                var headline = results.docs[0].headline.main;
+                var webUrl = results.docs[0].web_url;
+                var absract = results.docs[0].absract;
+
+                console.log(results);
+                // console.log(response.absract);
+
+                for (i=0; i <= response.docs.length; i) {
+                    var articleDiv = $("<div class='article'>");
+                    var lineOne = $("<p>").text(headline);
+                    articleDiv.append(lineOne);
+                    var lineTwo = $("<p>").text(abstract);
+                    articleDiv.append(lineTwo);
+                    var lineThree = $("<a>").text(webUrl);
+                    $(lineThree).attr("href", webUrl);
+                    articleDIv.append(lineThree);
+
+                    console.log(articleDiv)
+                    $("#results-view").append(artilcleDiv);
+                }
+
+            })
+        
+        
+        
+        </script>
+    </head>
+
+    <body>
+
+        <div class="jumbotron text-center">
+            <h1><strong>New York Times Search!</strong></h1>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h4><strong>Search Parameters</strong></h4>
+            </div>
+        
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Search Term:</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Number of Records to Retrieve:</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Start Year (Optional):</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">End Year (Optional):</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+        
+                    <button id="search">Search</button>
+        
+                    <button id="clear">Clear Results</button>
+        
+                </form>
+            </div>
+
+        </div>
+
+        <br>
+
+        <div class="card">
+            <div class="card-header">
+                <h4><strong>Top Articles</strong></h4>
+            </div>
+        
+            <div class="card-body articles">
+                <p id="results-view">Results</p>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="footer text-center">
+            <footer>Made with lots and lots of <span class="glyphicon glyphicon-heart"></span></footer>
+        </div>
+
+  
+            
+        
+    </body>
