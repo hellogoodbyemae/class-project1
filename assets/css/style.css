@@ -1,0 +1,33 @@
+#search{
+    border-radius: 50px;
+}
+
+#clear{
+    border-radius: 50px;
+}
+
+body {
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+#jumbotron{
+    background-color: antiquewhite;
+}
+
+#exampleFormControlInput1{
+    background: antiquewhite;
+}
+
+#results{
+    background-color: antiquewhite;
+}
+
+#results-view{
+    background-color: antiquewhite;
+}
+
+#footer{
+    background-color: antiquewhite;
+}
