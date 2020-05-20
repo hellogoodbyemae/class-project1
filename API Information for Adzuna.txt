@@ -1,0 +1,29 @@
+API Information for Adzuna
+
+Application ID
+This is the app ID you should send with each API request.
+673aae0c
+
+Application Key
+These are application keys used to authenticate requests.
+d305d78426efb2b49e37fda6396a7790
+
+https://api.adzuna.com/v1/api/jobs/gb/search/1?app_id={YOUR_APP_ID}&app_key={YOUR_APP_KEY}
+
+Data encoding
+Every time you make a query the response is returned as an object serialised using JSON, JSONP or XML encoding. The format returned is determined by the Accept HTTP header, but also be set by the content-type query string parameter which overrides the Accept header.
+
+JSON
+To receive JSON, set your Accept header to application/json. The data will then be returned as UTF-8 JSON. Some characters may be escaped as \uXXXX, as described in the JSON specification: http://www.json.org/
+
+==============================================
+
+API Information for YELP
+
+Client ID
+IX6GEfp_WQ-gBaWVT4s8Nw
+
+API Key
+L3WsZEJYTGGfg1zKaKOXk0ecT2iWJ_5daiIktlZibqoQcFEzoivDXS5h_qPMtoz0y7XGeiy15T5OKcazwngCoCxDAzuZ5I1ei6nWaoxzWzCIRsOTEWsub6rMFj3BXnYx
+
+GET https://api.yelp.com/v3/autocomplete?text=del&latitude=37.786882&longitude=-122.399972
