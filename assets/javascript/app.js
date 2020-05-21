@@ -20,4 +20,34 @@ function runQuery(response, queryURL){
         })
 }
 runQuery("", queryURL);
+
+function clear() {
+    $("results-view").empty();
+}
+
 // PROCESS
+$("#search").on("click", function() {
+
+    event.preventDefault();
+
+    clear();
+
+    // var queryURL = queryURL();
+
+    // $("#results-view").append($queryJob);
+    
+    queryJob = $("#job-search").val().trim();
+    console.log(queryJob);
+
+    // locationTerm = $("#location-search").val().trim();
+    // console.log(locationTerm);
+
+    var newURL = queryURL + "&q=" + queryJob;
+    console.log(newURL);
+
+    runQuery(10, queryURL);
+
+    return false;
+
+    
+})
