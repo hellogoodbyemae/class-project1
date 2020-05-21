@@ -1,0 +1,50 @@
+#search{
+    border-radius: 50px;
+}
+
+#clear{
+    border-radius: 50px;
+}
+
+body {
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+#jumbotron{
+    background-color: slategrey;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 340px;
+    margin-left: 340px;
+}
+
+#exampleFormControlInput1{
+    background: slategrey;
+}
+#location{
+    color: black;
+    background: slategray;
+}
+
+#job-title{
+    background-color: slategrey;
+    color: black;
+}
+
+#results{
+    background-color: slategrey;
+}
+
+#results-view{
+    background-color: slategrey;
+}
+
+footer{
+    background-color: slategrey;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 840px;
+    margin-left: 840px;
+}
