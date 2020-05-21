@@ -7,45 +7,7 @@
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700,700i&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-        <script type= "text/javascript">
-          var searchTerm="election"
-           
-            var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + searchTerm + "&api-key=YaeHEki4bu0Ebs1oCTGp7Xt0fZl7gS4b";
-            $.ajax({
-                url: queryURL,
-                method: "GET"
-            }).then(function (response) {
-                var results = response.response;
-
-                var headline = results.docs[0].headline.main;
-                var webUrl = results.docs[0].web_url;
-                var absract = results.docs[0].absract;
-
-                console.log(results);
-                // console.log(response.absract);
-
-                for (i=0; i <= response.docs.length; i) {
-                    var articleDiv = $("<div class='article'>");
-                    var lineOne = $("<p>").text(headline);
-                    articleDiv.append(lineOne);
-                    var lineTwo = $("<p>").text(abstract);
-                    articleDiv.append(lineTwo);
-                    var lineThree = $("<a>").text(webUrl);
-                    $(lineThree).attr("href", webUrl);
-                    articleDIv.append(lineThree);
-
-                    console.log(articleDiv)
-                    $("#results-view").append(artilcleDiv);
-                }
-
-            })
-        
-        
-        
-        </script>
+        <link rel="stylesheet" href="assets/css/style.css">
     </head>
 
     <body>
@@ -54,38 +16,8 @@
             <h1><strong>Git Jobs?</strong></h1>
         </div>
 
-        <!-- <div class="card">
-            <div class="card-header">
-            </div>
-        
-            <div class="card-body">
-                <form>
-                    <div class="form-group">
-                        <label for="exampleFormControlInput1">Job Title:</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="exampleFormControlInput1">Location:</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1">
-                    </div>
-
-        
-                    <button id="search">Search</button>
-        
-                    <button id="clear">Clear</button>
-        
-                </form>
-            </div>
-
-        </div> -->
 
         <div class="container">
-            <!-- <div class="row">
-              <div class="col-md-12">
-                  <div class="card-header">Search Ter</div>
-              </div>
-            </div> -->
           
             <div class="row">
               <div class="col m6">
@@ -138,5 +70,8 @@
         <div class="footer center">
             <footer>Class Project 1</footer>
         </div>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type= "text/javascript" src="assets/javascript/app.js"></script>
         
     </body>
