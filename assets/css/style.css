@@ -1,8 +1,4 @@
-#search{
-    border-radius: 50px;
-}
-
-#clear{
+#search, #clear{
     border-radius: 50px;
 }
 
@@ -20,31 +16,21 @@ body {
     margin-left: 340px;
 }
 
-#exampleFormControlInput1{
+#exampleFormControlInput1, #results, #results-view{
     background: slategrey;
 }
-#location{
-    color: black;
-    background: slategray;
-}
 
-#job-title{
+#search-term, #location, #job-title, #start-year, #end-year, #number-records, #location{
     background-color: slategrey;
     color: black;
-}
-
-#results{
-    background-color: slategrey;
-}
-
-#results-view{
-    background-color: slategrey;
 }
 
 footer{
     background-color: slategrey;
+    color: black;
     margin-top: 100px;
     margin-bottom: 100px;
-    margin-right: 840px;
-    margin-left: 840px;
+    margin-right: auto;
+    margin-left:  auto;
+    width: 50%;
 }
