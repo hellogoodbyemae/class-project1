@@ -13,21 +13,38 @@ body {
   }
 
 #jumbotron{
-    background-color: antiquewhite;
+    background-color: slategrey;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 340px;
+    margin-left: 340px;
 }
 
 #exampleFormControlInput1{
-    background: antiquewhite;
+    background: slategrey;
+}
+#location{
+    color: black;
+    background: slategray;
+}
+
+#job-title{
+    background-color: slategrey;
+    color: black;
 }
 
 #results{
-    background-color: antiquewhite;
+    background-color: slategrey;
 }
 
 #results-view{
-    background-color: antiquewhite;
+    background-color: slategrey;
 }
 
-#footer{
-    background-color: antiquewhite;
+footer{
+    background-color: slategrey;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 840px;
+    margin-left: 840px;
 }
