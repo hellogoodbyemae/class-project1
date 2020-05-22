@@ -20,4 +20,21 @@ function runQuery(response, queryURL){
         })
 }
 runQuery("", queryURL);
+
+//Yelp Function
+
+//Firebase configuration
+var farebaseConfig = {
+    apiKey: "AIzaSyBXNXp4lldKHNSk5CtxATvLb1-T04IreXI",
+    authDomain: "test-project-01-b27ab.firebaseapp.com",
+    databaseURL: "https://test-project-01-b27ab.firebaseio.com",
+    projectId: "test-project-01-b27ab",
+    storageBucket: "test-project-01-b27ab.appspot.com",
+    messagingSenderId: "312489434875",
+    appId: "1:312489434875:web:87691ea15434eafa7d1a5e"
+}
+//Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+var database = firebase.database();
+
 // PROCESS
