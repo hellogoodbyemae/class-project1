@@ -9,15 +9,30 @@ var queryJob = "";
 var jobLocation = "";
 
 //queryURL
-var queryURL = "https://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=" + adzId + "&app_key=" + adzKey;
+var queryURLBase = "https://api.adzuna.com/v1/api/jobs/us/search/1?app_id=" + adzId + "&app_key=" + adzKey;
 
 // FUNCTIONS
-function runQuery(response, queryURL){
-    $.ajax({url: queryURL, method: "GET", Accept: "application/json"})
+function runQuery(response, queryURLBase){
+    $.ajax({url: queryURLBase, method: "GET", Accept: "application/json"})
         .done(function(jobData) {
-            console.log(queryURL);
+            console.log(queryURLBase);
             console.log(jobData);
         })
 }
-runQuery("", queryURL);
+
 // PROCESS
+$("#search").on("click", function() {
+
+    queryJob = $("#job-search").val().trim();
+    console.log(queryJob);
+
+    jobLocation = $("#location-search").val().trim();
+    console.log(jobLocation);
+
+    //Add in Search Term
+    var newURL = queryURLBase + "&what=" + queryJob + "&where=" + jobLocation + "&content-type=application/json";
+    console.log(newURL);
+
+    runQuery(10, newURL);
+})
+

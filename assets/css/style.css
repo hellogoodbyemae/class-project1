@@ -1,0 +1,36 @@
+#search, #clear{
+    border-radius: 50px;
+}
+
+body {
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+#jumbotron{
+    background-color: slategrey;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 340px;
+    margin-left: 340px;
+}
+
+#exampleFormControlInput1, #results, #results-view{
+    background: slategrey;
+}
+
+#search-term, #location, #job-title, #start-year, #end-year, #number-records, #location{
+    background-color: slategrey;
+    color: black;
+}
+
+footer{
+    background-color: slategrey;
+    color: black;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: auto;
+    margin-left:  auto;
+    width: 50%;
+}
