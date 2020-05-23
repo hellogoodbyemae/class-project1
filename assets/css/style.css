@@ -1,5 +1,19 @@
 #search, #clear{
     border-radius: 50px;
+    animation-duration: 3s;
+    animation-name: slidein; 
+}
+
+@keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 30%; 
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 10%;
+    }
 }
 
 body {  
@@ -28,12 +42,12 @@ body {
 }
 
 #results, #results-view{
-    background: slategrey;
+    background: antiquewhite;
     width: 5%
 }
 
 #search-term, #location, #job-title, #start-year, #end-year, #number-records, #job-location{
-    background-color: slategrey;
+    background-color: antiquewhite;
     color: black;
 }
 
@@ -42,7 +56,7 @@ body {
 }
 
 footer{
-    background-color: slategrey;
+    background-color: antiquewhite;
     color: black;
     margin-top: 100px;
     margin-bottom: 100px;
