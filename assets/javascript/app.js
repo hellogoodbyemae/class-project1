@@ -18,8 +18,43 @@ function runQuery(response, queryURLBase){
             console.log(queryURLBase);
             console.log(jobData);
 
-            $("#results-view").text(JSON.stringify(jobData));
-        })
+            for (var i=0; i<jobData.results.length; i++){
+                console.log(jobData.results[i].title);
+                console.log(jobData.results[i].description);
+                console.log(jobData.results[i].company.display_name);
+                console.log(jobData.results[i].location);
+                console.log(jobData.results[i].redirect_url);
+
+                // $("#results-view").text(JSON.stringify(jobData));
+                jobDiv = $("#results-view");
+                // jobDiv.append(class; job)
+
+                var title = jobData.results[i].title;
+                var pOne = $("<h4>").text(title);
+                jobDiv.append(pOne);
+
+                var description = jobData.results[i].description;
+                var pTwo = $("<p>").text(description);
+                jobDiv.append(pTwo);
+
+                var dispName = jobData.results[i].company.display_name;
+                var pThree = $("<p>").text(dispName);
+                jobDiv.append(pThree);
+
+                var location = jobData.results[i].location;
+                var pFour = $("<p>").text(location);
+                jobDiv.append(pFour);
+
+                var url = jobData.results[i].redirect_url;
+                var pFive = $("<a>").text(url);
+                jobDiv.append("<a href='" + url + "'>" + url + "</a>");
+
+                $("#results-view").prepend(jobDiv);
+
+            }
+
+            
+        });
 }
 
 function displayResults(){
