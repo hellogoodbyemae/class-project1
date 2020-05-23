@@ -9,32 +9,30 @@ var queryJob = "";
 var jobLocation = "";
 
 //queryURL
-var queryURL = "https://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=" + adzId + "&app_key=" + adzKey;
+var queryURLBase = "https://api.adzuna.com/v1/api/jobs/us/search/1?app_id=" + adzId + "&app_key=" + adzKey;
 
 // FUNCTIONS
-function runQuery(response, queryURL){
-    $.ajax({url: queryURL, method: "GET", Accept: "application/json"})
+function runQuery(response, queryURLBase){
+    $.ajax({url: queryURLBase, method: "GET", Accept: "application/json"})
         .done(function(jobData) {
-            console.log(queryURL);
+            console.log(queryURLBase);
             console.log(jobData);
         })
 }
-runQuery("", queryURL);
-
-//Yelp Function
-
-//Firebase configuration
-var farebaseConfig = {
-    apiKey: "AIzaSyBXNXp4lldKHNSk5CtxATvLb1-T04IreXI",
-    authDomain: "test-project-01-b27ab.firebaseapp.com",
-    databaseURL: "https://test-project-01-b27ab.firebaseio.com",
-    projectId: "test-project-01-b27ab",
-    storageBucket: "test-project-01-b27ab.appspot.com",
-    messagingSenderId: "312489434875",
-    appId: "1:312489434875:web:87691ea15434eafa7d1a5e"
-}
-//Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-var database = firebase.database();
 
 // PROCESS
+$("#search").on("click", function() {
+
+    queryJob = $("#job-search").val().trim();
+    console.log(queryJob);
+
+    jobLocation = $("#location-search").val().trim();
+    console.log(jobLocation);
+
+    //Add in Search Term
+    var newURL = queryURLBase + "&what=" + queryJob + "&where=" + jobLocation + "&content-type=application/json";
+    console.log(newURL);
+
+    runQuery(10, newURL);
+})
+
