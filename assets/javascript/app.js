@@ -22,7 +22,7 @@ function runQuery(response, queryURLBase){
                 console.log(jobData.results[i].title);
                 console.log(jobData.results[i].description);
                 console.log(jobData.results[i].company.display_name);
-                console.log(jobData.results[i].location);
+                console.log(jobData.results[i].location.display_name);
                 console.log(jobData.results[i].redirect_url);
 
                 // $("#results-view").text(JSON.stringify(jobData));
@@ -41,7 +41,7 @@ function runQuery(response, queryURLBase){
                 var pThree = $("<p>").text(dispName);
                 jobDiv.append(pThree);
 
-                var location = jobData.results[i].location;
+                var location = jobData.results[i].location.display_name;
                 var pFour = $("<p>").text(location);
                 jobDiv.append(pFour);
 
