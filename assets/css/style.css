@@ -2,10 +2,21 @@
     border-radius: 50px;
 }
 
-body {
-    background-image: url("../images/background.jpg");
+body {  
     background-repeat: no-repeat;
     background-attachment: fixed;
+  }
+
+  body::after {
+    content: "";
+    background: url(../images/background.jpg);
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
   }
 
 #jumbotron{
@@ -16,13 +27,18 @@ body {
     margin-left: 340px;
 }
 
-#exampleFormControlInput1, #results, #results-view{
+#results, #results-view{
     background: slategrey;
+    width: 5%
 }
 
-#search-term, #location, #job-title, #start-year, #end-year, #number-records, #location{
+#search-term, #location, #job-title, #start-year, #end-year, #number-records, #job-location{
     background-color: slategrey;
     color: black;
+}
+
+#location-search, #job-search{
+    background-color: white;
 }
 
 footer{
@@ -32,5 +48,5 @@ footer{
     margin-bottom: 100px;
     margin-right: auto;
     margin-left:  auto;
-    width: 50%;
+    width: 10%;
 }
