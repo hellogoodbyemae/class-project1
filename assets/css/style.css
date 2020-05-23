@@ -1,18 +1,19 @@
 #search, #clear{
     border-radius: 50px;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-name: slidein; 
+    width: 100px;
 }
 
 @keyframes slidein {
     from {
       margin-left: 100%;
-      width: 30%; 
+      width: 100%; 
     }
   
     to {
       margin-left: 0%;
-      width: 10%;
+      width: 18%;
     }
 }
 
