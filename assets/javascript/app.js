@@ -14,14 +14,22 @@ var queryURLBase = "https://api.adzuna.com/v1/api/jobs/us/search/1?app_id=" + ad
 // FUNCTIONS
 function runQuery(response, queryURLBase){
     $.ajax({url: queryURLBase, method: "GET", Accept: "application/json"})
-        .done(function(jobData) {
+        .then(function(jobData) {
             console.log(queryURLBase);
             console.log(jobData);
+
+            $("#results-view").text(JSON.stringify(jobData));
         })
 }
 
+function displayResults(){
+
+}
+
 // PROCESS
-$("#search").on("click", function() {
+$("#search").on("click", function(event) {
+
+    event.preventDefault();
 
     queryJob = $("#job-search").val().trim();
     console.log(queryJob);
@@ -34,5 +42,6 @@ $("#search").on("click", function() {
     console.log(newURL);
 
     runQuery(10, newURL);
+
 })
 
