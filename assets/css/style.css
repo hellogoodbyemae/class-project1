@@ -43,7 +43,6 @@ body {
 
 #results, #results-view{
     background: antiquewhite;
-    width: 5%
 }
 
 #search-term, #location, #job-title, #start-year, #end-year, #number-records, #job-location{
