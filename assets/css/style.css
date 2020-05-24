@@ -18,8 +18,7 @@
 }
 
 body {  
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-size: cover;
   }
 
   body::after {
@@ -35,13 +34,19 @@ body {
   }
 
 #jumbotron{
-    background-color: slategrey;
     margin-top: 100px;
     margin-bottom: 100px;
-    margin-right: 340px;
-    margin-left: 340px;
+    margin-right: 640px;
+    margin-left: 640px;
+    font-family: 'Oswald', sans-serif;
+}
+h1{
+  font-size: 150px;
 }
 
+h4{
+  font-family: 'Oswald', sans-serif;
+}
 #results, #results-view{
     background: antiquewhite;
 }
@@ -63,4 +68,10 @@ footer{
     margin-right: auto;
     margin-left:  auto;
     width: 10%;
+}
+
+#boxcontainer, #results-view{
+  background-color: antiquewhite;
+  color: black;
+  padding: 15px 25px 15px 25px;
 }
