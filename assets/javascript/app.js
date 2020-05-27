@@ -1,5 +1,18 @@
 // alert("Test");
-
+var firebaseConfig = {
+    apiKey: "AIzaSyBXNXp4lldKHNSk5CtxATvLb1-T04IreXI",
+    authDomain: "test-project-01-b27ab.firebaseapp.com",
+    databaseURL: "https://test-project-01-b27ab.firebaseio.com",
+    projectId: "test-project-01-b27ab",
+    storageBucket: "test-project-01-b27ab.appspot.com",
+    messagingSenderId: "312489434875",
+    appId: "1:312489434875:web:87691ea15434eafa7d1a5e"
+  };
+  
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+var database = firebase.database();
+  
 // SET UP VARIABLES
 var adzId = "673aae0c";
 var adzKey = "d305d78426efb2b49e37fda6396a7790";
@@ -88,9 +101,20 @@ $("#search").on("click", function(event) {
 
     runQuery(10, newURL);
 
+
 });
 
 $("#clear").on("click", clear);
+
+
+=======
+    //Firebase storing info
+    database.ref().push({
+        jobTitle: queryJob,
+        jobLocation: jobLocation,
+        dateAdded: firebase.database.ServerValue.TIMESTAMP
+      });
+})
 
 
 
