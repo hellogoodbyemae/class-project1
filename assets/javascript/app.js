@@ -31,7 +31,7 @@ function runQuery(response, queryURLBase){
             console.log(queryURLBase);
             console.log(jobData);
 
-            for (var i=0; i<jobData.results.length; i++){
+            for (var i=0; i < 5; i++){
                 console.log(jobData.results[i].title);
                 console.log(jobData.results[i].description);
                 console.log(jobData.results[i].company.display_name);
@@ -78,10 +78,6 @@ function clear(){
 
     $("#results-view").empty();
 
-    $("#job-search").empty();
-
-    $("#location-search").empty();
-
 }
 
 // PROCESS
@@ -99,22 +95,19 @@ $("#search").on("click", function(event) {
     var newURL = queryURLBase + "&what=" + queryJob + "&where=" + jobLocation + "&content-type=application/json";
     console.log(newURL);
 
-    runQuery(10, newURL);
+    runQuery(5, newURL);
 
+    //Firebase storing info
+    database.ref().push({
+            jobTitle: queryJob,
+            jobLocation: jobLocation,
+            dateAdded: firebase.database.ServerValue.TIMESTAMP
+    });
 
 });
 
 $("#clear").on("click", clear);
 
-
-=======
-    //Firebase storing info
-    database.ref().push({
-        jobTitle: queryJob,
-        jobLocation: jobLocation,
-        dateAdded: firebase.database.ServerValue.TIMESTAMP
-      });
-})
 
 
 
