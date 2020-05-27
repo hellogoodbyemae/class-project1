@@ -13,6 +13,7 @@ Outline of pseudocode
 4. Send that to API for Adzuna, and receive the JSON 
 
 5. Record the search on the firebase to have a log of all searches made
+ - display title, description, company, location, redirect(specifics after working on project, for reference only)
 
 6. using the results of jobs from Adazuna, search for a review for each company found Yelp
 
