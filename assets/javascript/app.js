@@ -74,6 +74,16 @@ function displayResults(){
 
 }
 
+function clear(){
+
+    $("#results-view").empty();
+
+    $("#job-search").empty();
+
+    $("#location-search").empty();
+
+}
+
 // PROCESS
 $("#search").on("click", function(event) {
 
@@ -91,6 +101,13 @@ $("#search").on("click", function(event) {
 
     runQuery(10, newURL);
 
+
+});
+
+$("#clear").on("click", clear);
+
+
+=======
     //Firebase storing info
     database.ref().push({
         jobTitle: queryJob,
