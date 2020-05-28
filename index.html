@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Job Search</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+
+    <body>
+        <div id="background"></div>
+        <style>
+        html, body, h1, h2, h3, h4, h5, h6, div {
+            padding: 0;
+            border: 0;
+            margin: 0;
+        }
+        .top {
+            padding: 0;
+            height: 170px;
+            background-color: #ef9a9a;
+            margin: 0px;
+        }
+        </style>
+        
+        <div class="jumbotron center" id="jumbotron">
+            <h1><strong>GIT JOBS?</strong></h1>
+        </div>
+
+
+
+        <div class="container" id="boxcontainer">
+          
+            <div class="row">
+              <div class="col m6">
+                  <div class="form-group">
+                      <label for="job" id="job-title">Job Title:</label>
+                      <input type="text" class="form-control" id="job-search">
+                  </div>
+              </div>
+          
+              <div class="col m6">
+                  <div class="form-group">
+                      <label for="location" id="job-location">Location:</label>
+                      <input type="text" class="form-control" id="location-search">
+                  </div>
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="col m6">
+                  <button id="search">Search</button>
+              </div>
+          
+              <div class="col m6">
+                  <button id="clear">Clear</button>
+              </div>
+            </div>
+
+        <br>
+
+        
+        
+        
+    </div>
+    <br>
+    <div class="container">
+
+        <div class="row">
+            <div class="col m12">
+               <h4><strong>Results</strong></h4> 
+            </div>    
+        </div>
+
+        <div class="row">
+            <div class="col m12">
+                <p id="results-view"></p> 
+            </div>    
+        </div>
+    
+    </div>
+
+    <br>
+    <br>
+    <div class="footer center">
+        <footer>Class Project 1</footer>
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Firebase Reference Start-->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <!-- Firebase Reference End-->
+    <script type= "text/javascript" src="assets/javascript/app.js"></script>
+    </body>
+
+
+
+  
