@@ -20,6 +20,7 @@ var adzKey = "d305d78426efb2b49e37fda6396a7790";
 //Search Parameters
 var queryJob = "";
 var jobLocation = "";
+var jobUUID = ""; //variable for second API
 
 //queryURL
 var queryURLBase = "https://api.adzuna.com/v1/api/jobs/us/search/1?app_id=" + adzId + "&app_key=" + adzKey;
@@ -80,6 +81,30 @@ function clear(){
 
 }
 
+//Second API
+function skillSearch(jobURL){
+    $.ajax({
+        url: jobURL
+    })
+    .then(function(jobURLData){
+        jobUUID = jobURLData[0].uuid;
+        console.log(jobUUID);
+        var skillURL = "http://api.dataatwork.org/v1/jobs/" + jobUUID + "/related_skills";
+        console.log(skillURL)
+        displayResults(skillURL)
+    })
+}
+
+function displaySkills(skillURL){
+    $.ajax({
+        url: skillURL
+    })
+    .then(function(skillData){
+        var skillResults = skillData;
+        console.log(skillResults)
+    })
+}
+
 // PROCESS
 $("#search").on("click", function(event) {
 
@@ -105,6 +130,24 @@ $("#search").on("click", function(event) {
             dateAdded: firebase.database.ServerValue.TIMESTAMP
     });
 
+    //Second API
+    var jobURL = "http://api.dataatwork.org/v1/jobs/normalize?job_title="+queryJob;
+    console.log(jobURL);
+    skillSearch(jobURL);
+    // var skillURL = "http://api.dataatwork.org/v1/jobs/" + jobUUID + "/related_skills/";
+    // console.log(skillURL)
+    // displaySkills(skillURL)
+
 });
 
+
+
+
 $("#clear").on("click", clear);
+
+
+
+
+
+$("#clear").on("click", clear);
+
