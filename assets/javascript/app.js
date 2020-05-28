@@ -25,6 +25,7 @@ var jobUUID = ""; //variable for second API
 //queryURL
 var queryURLBase = "https://api.adzuna.com/v1/api/jobs/us/search/1?app_id=" + adzId + "&app_key=" + adzKey;
 
+
 // FUNCTIONS
 function runQuery(response, queryURLBase){
     $.ajax({url: queryURLBase, method: "GET", Accept: "application/json"})
@@ -61,19 +62,18 @@ function runQuery(response, queryURLBase){
 
                 var url = jobData.results[i].redirect_url;
                 var pFive = $("<a>").text(url);
-                jobDiv.append("<a href='" + url + "'>" + url + "</a>");
+                jobDiv.append("<a target = '_blank' href='" + url + "'>" + url + "</a>");
 
                 $("#results-view").prepend(jobDiv);
 
             }
 
-            
         });
 }
 
-function displayResults(){
+// function displayResults(){
 
-}
+// }
 
 function clear(){
 
@@ -119,8 +119,9 @@ $("#search").on("click", function(event) {
     //Add in Search Term
     var newURL = queryURLBase + "&what=" + queryJob + "&where=" + jobLocation + "&content-type=application/json";
     console.log(newURL);
+    
 
-    runQuery(5, newURL);
+    runQuery(3, newURL);
 
     //Firebase storing info
     database.ref().push({
@@ -141,8 +142,12 @@ $("#search").on("click", function(event) {
 
 
 
+
 $("#clear").on("click", clear);
 
 
 
+
+
+$("#clear").on("click", clear);
 
