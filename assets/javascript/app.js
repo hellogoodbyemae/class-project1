@@ -79,4 +79,3 @@ $("#search").on("click", function(event) {
     runQuery(10, newURL);
 
 })
-
