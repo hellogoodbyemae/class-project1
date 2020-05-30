@@ -25,7 +25,6 @@ var jobUUID = ""; //variable for second API
 //queryURL
 var queryURLBase = "https://api.adzuna.com/v1/api/jobs/us/search/1?app_id=" + adzId + "&app_key=" + adzKey;
 
-
 // FUNCTIONS
 function runQuery(response, queryURLBase){
     $.ajax({url: queryURLBase, method: "GET", Accept: "application/json"})
