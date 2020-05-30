@@ -91,7 +91,7 @@ function skillSearch(jobURL){
         console.log(jobUUID);
         var skillURL = "http://api.dataatwork.org/v1/jobs/" + jobUUID + "/related_skills";
         console.log(skillURL)
-        displayResults(skillURL)
+        displaySkills(skillURL)
     })
 }
 
@@ -100,8 +100,27 @@ function displaySkills(skillURL){
         url: skillURL
     })
     .then(function(skillData){
-        var skillResults = skillData;
-        console.log(skillResults)
+
+        skillDiv = $("#skills-view");
+
+        var skillResults = skillData.skills;
+            var skillString = "";
+            for (i=0; i<skillResults.length; i++) {
+                if (typeof(skillResults[i].skill_name != "undefined")) {
+                    if (i != 0) {
+                        skillString += ',' 
+                    }
+                    skillString += skillResults[i].skill_name;
+                    
+                }
+            }
+        //alert(skillString);
+        console.log(skillResults);
+        var pSix = $("<a>").text(skillResults);
+        skillDiv.append(pSix);
+
+        $("#skills-view").prepend(skillDiv);
+
     })
 }
 
@@ -116,12 +135,16 @@ $("#search").on("click", function(event) {
     jobLocation = $("#location-search").val().trim();
     console.log(jobLocation);
 
+    skillResults = $("#job-search").val().trim();
+    console.log(skillResults);
+
     //Add in Search Term
     var newURL = queryURLBase + "&what=" + queryJob + "&where=" + jobLocation + "&content-type=application/json";
     console.log(newURL);
-    
 
-    runQuery(3, newURL);
+    var skillURL = "http://api.dataatwork.org/v1/jobs/" + jobUUID + "/related_skills/";
+    
+    runQuery(3, newURL, skillURL);
 
     //Firebase storing info
     database.ref().push({
@@ -142,4 +165,8 @@ $("#search").on("click", function(event) {
 
 
 
+
 $("#clear").on("click", clear);
+
+
+
