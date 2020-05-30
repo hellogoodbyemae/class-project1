@@ -104,8 +104,10 @@ function displaySkills(skillURL){
         skillDiv = $("#skills-view");
 
         var skillResults = skillData.skills;
+        console.log(skillResults[0].skill_name)
             var skillString = "";
-            for (i=0; i<skillResults.length; i++) {
+
+            for (i=0; i<5; i++) {
                 if (typeof(skillResults[i].skill_name != "undefined")) {
                     if (i != 0) {
                         skillString += ',' 
@@ -116,10 +118,11 @@ function displaySkills(skillURL){
             }
         //alert(skillString);
         console.log(skillResults);
-        var pSix = $("<a>").text(skillResults);
+        var pSix = $("<a>").text(skillString);
         skillDiv.append(pSix);
 
         $("#skills-view").prepend(skillDiv);
+        
 
     })
 }
