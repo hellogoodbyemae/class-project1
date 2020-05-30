@@ -27,3 +27,16 @@ API Key
 L3WsZEJYTGGfg1zKaKOXk0ecT2iWJ_5daiIktlZibqoQcFEzoivDXS5h_qPMtoz0y7XGeiy15T5OKcazwngCoCxDAzuZ5I1ei6nWaoxzWzCIRsOTEWsub6rMFj3BXnYx
 
 GET https://api.yelp.com/v3/autocomplete?text=del&latitude=37.786882&longitude=-122.399972
+
+
+===============================================
+
+Solo's Firebase
+
+apiKey: "AIzaSyBXNXp4lldKHNSk5CtxATvLb1-T04IreXI",
+    authDomain: "test-project-01-b27ab.firebaseapp.com",
+    databaseURL: "https://test-project-01-b27ab.firebaseio.com",
+    projectId: "test-project-01-b27ab",
+    storageBucket: "test-project-01-b27ab.appspot.com",
+    messagingSenderId: "312489434875",
+    appId: "1:312489434875:web:87691ea15434eafa7d1a5e"
