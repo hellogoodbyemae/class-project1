@@ -83,7 +83,7 @@ footer{
     width: 10%;
 }
 
-#boxcontainer, #results-view{
+#boxcontainer, #results-view, #skills-view{
   background-color: antiquewhite;
   color: black;
   padding: 15px 25px 15px 25px;
