@@ -77,6 +77,7 @@ function runQuery(response, queryURLBase){
 function clear(){
 
     $("#results-view").empty();
+    $("#skills-view").empty();
 
 }
 
