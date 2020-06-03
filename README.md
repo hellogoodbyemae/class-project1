@@ -1,1 +1,12 @@
 # class-project1
+
+Git Jobs? is a job search engine that allows users to search for jobs within a certain field & location. The user can also redirect to the Company page to apply for any interested jobs.
+
+The process behind Git Jobs is when a user inputs a 'job' and 'location' keyword, a function is run to search Adzuna, a search engine for job advertisements, to return results relating to the searched job title, within the searched location.
+While this is happening, Git Jobs is also using the users 'job' keyword to run a search through Data at Work's Open Skills Project, a collection of Department of Labor's O'NET Data Resources, to return a collect of skills related to the searched job title. The list of skills makes applying to jobs easier, as well as providing a starting point to what requirements are needed to obtain your desired job.
+
+To create this project, we divided the responsibilities into two major parts, the front end and the back end. Nick handled the front end UI of the page, and Solomon and I broke up the back end portions into Adzuna which was my main focus, Firebase which was Solomon's, and Open Skills Project, which we both worked on together, since it needed to utilize information gained from the Adzuna API.
+We were able to complete the project by having an open line of communication to help each other through independent challenges. Some of those major challenges were getting both API's to work together when retrieving information from different JSON sources. The other major challenge, probably the biggest, was learning to work together with our GitHub repository. It took several attempts to learn how to properly push & pull, resolve conflicts, and not overwrite our code, but by walking through the process together, we were finally able to figure out the proper procedure in merging our code to our site.
+
+We have several ideas as far as the future development for Git Jobs. We would like to utilize the Firebase to allow users to create profiles as a way to save jobs of interest from searches, and allow storage for resume & portfolio information.
+We would like to make a more advanced search query, allowing users to apply the collection of skills to their searches to produce more specific results.
